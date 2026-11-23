@@ -38,7 +38,7 @@ async function createChat(req, res, next){
 
 async function getChatById(req, res, next){
     try {
-        const {chatId} = req.params;
+        const chatId = Number(req.params.chatId);
 
         const { cursor, limit } = req.query;
         
@@ -64,7 +64,7 @@ async function getChatById(req, res, next){
 
 async function editChat(req, res, next){
     try {
-        const { chatId } = req.params;
+        const chatId = Number(req.params.chatId);
         const { name } = req.body;
 
         const updatedChat = await chatService.editChat({
@@ -97,7 +97,7 @@ async function addUser(req, res, next){
 
 async function removeUser(req, res, next){
     try {
-        const {chatId} = req.params;
+        const chatId = Number(req.params.chatId);
 
         await chatService.removeUserFromChat({
             chatId,

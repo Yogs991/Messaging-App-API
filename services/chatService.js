@@ -40,6 +40,8 @@ async function getUserChats(userId, {cursor, limit = 20}){
 
 async function createChat({currentUserId, userIds = [], name}){
 
+    const uniqueUserIds = [...new Set([Number(currentUserId), ...userIds.map(Number)])];
+    
     const isGroup = uniqueUserIds.length > 2;
 
     const chat = await prisma.chat.create({

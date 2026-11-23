@@ -6,6 +6,7 @@ const {configurePassport} = require("./middleware/passport");
 const userRouter = require("./routes/userRouter");
 const messageRouter = require("./routes/messageRouter");
 const chatRouter = require("./routes/chatRouter");
+const authRouter = require("./routes/authRouter");
 const errorHandler = require("./middleware/errorHandler");
 const app = express();
 
@@ -30,6 +31,7 @@ app.use(passport.initialize());
 app.use("/api/users", userRouter);
 app.use("/api/messages", messageRouter);
 app.use("/api/chats", chatRouter);
+app.use("/api/auth", authRouter);
 
 app.use(errorHandler);
 

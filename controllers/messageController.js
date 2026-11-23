@@ -2,7 +2,7 @@ const messageService = require("../services/messageService");
 
 async function createMessage(req, res, next){
     try {
-        const { chatId } = req.params;
+        const chatId = Number(req.params.chatId);
         const { content } = req.body;
 
         const message = await messageService.createMessage({
