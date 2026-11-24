@@ -11,7 +11,7 @@ const errorHandler = require("./middleware/errorHandler");
 const app = express();
 
 
-const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173").split(",").map((origin)=>origin.trim());
+const allowedOrigins = (process.env.CLIENT_URL, "http://localhost:5173");
 
 app.use(
     cors({
