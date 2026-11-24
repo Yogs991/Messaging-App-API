@@ -37,9 +37,10 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, (error)=>{
+app.listen(PORT, "0.0.0.0", (error)=>{
     if(error){
         console.log(error);
+        return;
     }
     console.log(`App is listening on port ${PORT}`);
 })

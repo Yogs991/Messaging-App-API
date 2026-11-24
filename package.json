@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build": "prisma generate --config prisma8.config.js",
+    "migrate:deploy": "prisma migrate deploy --config prisma7.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
